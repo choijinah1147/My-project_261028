@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오알반 수업 공개의 날 - 학부모 소감 나눔터</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f2f5f1;
+      color: #2d3748;
+    }
+    .notice-paper {
+      background: #ffffff;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+      border-radius: 28px;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .pulse-subtle {
+      animation: subtlePulse 2.5s infinite ease-in-out;
+    }
+    @keyframes subtlePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between py-6 px-3 sm:px-6">
+
+  <div class="max-w-3xl w-full mx-auto space-y-8">
+    
+    <!-- 최상단 헤더 배너 -->
+    <header class="text-center space-y-2 pt-2">
+      <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs sm:text-sm font-semibold bg-emerald-100 text-emerald-800 tracking-wide shadow-sm">
+        <i class="fa-solid fa-graduation-cap"></i> 제천의 자랑거리를 소개하는 4학년 5반
+      </span>
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-800 tracking-tight">
+        오알반 수업 공개의 날
+      </h1>
+      <p class="text-sm sm:text-base text-gray-600 font-medium">
+        우리 아이들의 소중한 발표를 듣고 따뜻한 칭찬과 응원의 한마디를 남겨주세요 🌱
+      </p>
+    </header>
+
+    <!-- 안내장 섹션 (첨부된 초대장 원문 그래픽 및 텍스트 충실 재현) -->
+    <section class="notice-paper p-6 sm:p-10 border-4 border-emerald-50 relative overflow-hidden">
+      <!-- 배경 포인트 장식 -->
+      <div class="absolute -right-8 -top-8 w-28 h-28 bg-emerald-50 rounded-full opacity-60 pointer-events-none"></div>
+      <div class="absolute -left-6 -bottom-6 w-24 h-24 bg-amber-50 rounded-full opacity-80 pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col items-center text-center space-y-5">
+        <div class="space-y-4 text-gray-700 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+          <p>
+            바쁘신 일정 중에도 귀한 걸음으로 4학년 5반 교실을<br class="hidden sm:inline">
+            따뜻하게 채워 주셔서 진심으로 감사드립니다.
+          </p>
+
+          <p>
+            이번 공개수업을 위해 우리 아이들은 서로 도우며 정성껏 준비했습니다.<br>
+            비록 서툴고 조심스러운 모습이 있을지라도, 온 마음을 다해 노력한 아이들에게<br class="hidden sm:inline">
+            <span class="font-bold text-emerald-600">학부모님의 따뜻한 칭찬과 격려</span>를 보태어 주신다면<br class="hidden sm:inline">
+            아이들 마음속에 오래도록 큰 자신감과 소중한 추억으로 남을 것입니다.
+          </p>
+
+          <p>
+            오늘 수업을 참관하시며 느끼신 소감이나 아이들에게 전하고 싶은<br class="hidden sm:inline">
+            따뜻한 응원의 한마디를 남겨 주시면 감사하겠습니다.
+          </p>
+
+          <div class="space-y-1">
+            <p>늘 믿음으로 함께해 주심에 감사드리며,</p>
+            <p>가정에 건강과 행복이 가득하기를 기원합니다.</p>
+          </div>
+        </div>
+
+        <div class="pt-2 text-sm sm:text-base text-gray-600 font-normal">
+          2026.10.28(수)
+        </div>
+      </div>
+    </section>
+
+    <!-- 5개 모둠 발표 주제 안내 카드 그리드 -->
+    <section class="space-y-3">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+          <i class="fa-solid fa-shapes text-emerald-600"></i> 우리 반 발표 모둠 및 주제 (5모둠)
+        </h3>
+        <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">
+          터치하여 소감 바로 남기기
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" id="groupOverviewCards">
+        <!-- JS로 동적 생성 및 클릭 시 선택 -->
+      </div>
+    </section>
+
+    <!-- 소감 남기기 폼 -->
+    <section class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-emerald-100/70 space-y-5">
+      <div class="flex items-center gap-2.5 border-b pb-4 border-gray-100">
+        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg">
+          <i class="fa-regular fa-comment-dots"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-gray-900 leading-tight">응원 소감 남기기</h3>
+          <p class="text-xs sm:text-sm text-gray-500">학생들에게 보내는 다정한 칭찬의 글을 작성해주세요.</p>
+        </div>
+      </div>
+
+      <form id="commentForm" class="space-y-4" onsubmit="handleFormSubmit(event)">
+        <!-- 발표 모둠 선택 -->
+        <div>
+          <label for="groupSelect" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+            발표 모둠 선택 <span class="text-rose-500">*</span>
+          </label>
+          <div class="relative">
+            <select id="groupSelect" required class="w-full appearance-none bg-gray-50 border border-gray-200 text-gray-800 rounded-xl px-4 py-3 pr-10 text-sm font-medium focus:ring-2 focus:ring-emerald-400 focus:bg-white focus:outline-none transition">
+              <option value="" disabled selected>칭찬하고 싶은 모둠을 선택해주세요</option>
+              <option value="1">1모둠 : 의림지 🌊</option>
+              <option value="2">2모둠 : 청풍호 🏞️</option>
+              <option value="3">3모둠 : 국제음악영화제 🎬🎶</option>
+              <option value="4">4모둠 : 빨간오뎅과 약초(황기, 당귀) 🍢🌿</option>
+              <option value="5">5모둠 : 탁사정과 옥순봉 ⛰️</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- 응원 스티커 선택 (성함 입력란 제거) -->
+        <div>
+          <label for="badgeSelect" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+            칭찬 뱃지 달아주기
+          </label>
+          <div class="relative">
+            <select id="badgeSelect" onchange="handleBadgeChange(this.value)" class="w-full appearance-none bg-gray-50 border border-gray-200 text-gray-800 rounded-xl px-4 py-3 pr-10 text-sm font-medium focus:ring-2 focus:ring-emerald-400 focus:bg-white focus:outline-none transition">
+              <option value="👏 자신감 최고!">👏 자신감 최고!</option>
+              <option value="🌟 발표왕 최고!">🌟 발표왕 최고!</option>
+              <option value="💡 창의력 대장!">💡 창의력 대장!</option>
+              <option value="🤝 협동심 감동!">🤝 협동심 감동!</option>
+              <option value="💖 큰 감동 받았어요!">💖 큰 감동 받았어요!</option>
+              <option value="custom">✏️ 기타 (직접 입력하기)</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </div>
+          </div>
+          <!-- 기타 선택 시 직접 입력하는 필드 -->
+          <div id="customBadgeContainer" class="hidden mt-2">
+            <input type="text" id="customBadgeInput" maxlength="15" placeholder="나만의 칭찬 뱃지를 입력해주세요 (예: 🌈 목소리 꾀꼬리!)" class="w-full bg-white border border-emerald-300 text-gray-800 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-emerald-400 focus:outline-none transition">
+            <p class="text-[11px] text-gray-500 mt-1 pl-1">이모지나 짧은 칭찬 문구를 자유롭게 적어주세요 (최대 15자)</p>
+          </div>
+        </div>
+
+        <!-- 소감 내용 작성 -->
+        <div>
+          <label for="messageInput" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+            따뜻한 응원의 소감 <span class="text-rose-500">*</span>
+          </label>
+          <textarea id="messageInput" required rows="3" placeholder="예: 떨렸을 텐데 또박또박 제천의 자랑을 설명해줘서 정말 대견했어요! 열심히 준비한 노력이 고스란히 느껴졌습니다 :)" class="w-full bg-gray-50 border border-gray-200 text-gray-800 rounded-xl p-4 text-sm focus:ring-2 focus:ring-emerald-400 focus:bg-white focus:outline-none transition leading-relaxed"></textarea>
+        </div>
+
+        <!-- 피드백 메시지 박스 (기본 숨김) -->
+        <div id="alertBox" class="hidden rounded-xl p-3 text-sm flex items-center gap-2"></div>
+
+        <!-- 전송 버튼 -->
+        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-[0.99] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2 transition duration-200 text-base">
+          <i class="fa-solid fa-paper-plane"></i> 응원 소감 등록하기
+        </button>
+      </form>
+    </section>
+
+    <!-- 등록된 소감 확인 목록 & 모둠별 필터 -->
+    <section class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-200 pb-3">
+        <div>
+          <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+            <i class="fa-solid fa-comments text-emerald-600"></i> 학부모님들의 응원 한마디
+          </h3>
+          <p class="text-xs text-gray-500">모둠을 클릭하면 해당 모둠의 소감만 모아보실 수 있습니다.</p>
+        </div>
+        <div class="text-xs font-semibold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full self-start sm:self-auto">
+          전체 소감: <span id="totalCommentCount" class="font-bold">0</span>건
+        </div>
+      </div>
+
+      <!-- 모둠 필터 스크롤 바 -->
+      <div class="flex gap-2 overflow-x-auto pb-2 custom-scroll" id="filterTabs">
+        <button onclick="setFilter('all')" class="filter-btn active whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition" data-id="all">
+          ✨ 전체보기
+        </button>
+        <button onclick="setFilter('1')" class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition" data-id="1">
+          1모둠 (의림지)
+        </button>
+        <button onclick="setFilter('2')" class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition" data-id="2">
+          2모둠 (청풍호)
+        </button>
+        <button onclick="setFilter('3')" class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition" data-id="3">
+          3모둠 (음악영화제)
+        </button>
+        <button onclick="setFilter('4')" class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition" data-id="4">
+          4모둠 (빨간오뎅·약초)
+        </button>
+        <button onclick="setFilter('5')" class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition" data-id="5">
+          5모둠 (탁사정·옥순봉)
+        </button>
+      </div>
+
+      <!-- 소감 카드 목록이 렌더링될 영역 -->
+      <div id="commentsContainer" class="space-y-3.5 min-h-[160px]">
+        <!-- JS로 동적 렌더링 -->
+      </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="text-center py-6 text-xs text-gray-500 border-t border-gray-200">
+      <p class="font-medium text-gray-600">함께 성장하는 즐거운 배움터, 4학년 5반 오알반</p>
+      <p class="mt-1">소중한 격려의 말씀은 아이들에게 큰 힘과 자신감이 됩니다. 감사합니다.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // 5모둠 데이터 정의
+    const GROUPS = {
+      '1': { id: '1', name: '1모둠', topic: '의림지', icon: 'fa-water', color: 'emerald', emoji: '🌊', desc: '역사와 자연이 살아 숨 쉬는 제천의 명소' },
+      '2': { id: '2', name: '2모둠', topic: '청풍호', icon: 'fa-mountain-sun', color: 'blue', emoji: '🏞️', desc: '아름다운 비경과 시원한 풍광의 호수' },
+      '3': { id: '3', name: '3모둠', topic: '국제음악영화제', icon: 'fa-film', color: 'purple', emoji: '🎬🎶', desc: '음악과 영화가 함께하는 대표 문화 축제' },
+      '4': { id: '4', name: '4모둠', topic: '빨간오뎅과 약초(황기, 당귀)', icon: 'fa-bowl-food', color: 'rose', emoji: '🍢🌿', desc: '맛있는 별미와 건강을 지키는 특산 약초' },
+      '5': { id: '5', name: '5모둠', topic: '탁사정과 옥순봉', icon: 'fa-tree', color: 'amber', emoji: '⛰️', desc: '선비의 기개가 깃든 정자와 절경의 바위봉' }
+    };
+
+    // 초기 샘플 소감 데이터 (단 1개의 예시만 제공하고 예시 표기 플래그 추가)
+    const INITIAL_COMMENTS = [
+      {
+        id: 'c_example_1',
+        groupId: '1',
+        isExample: true,
+        author: '오알반을 응원하는 마음',
+        badge: '🌟 발표왕 최고!',
+        message: '떨렸을 텐데도 친구들과 눈을 맞추며 또박또박 의림지를 소개하는 모습이 정말 대견했어요! 열심히 준비한 노력이 고스란히 전해져 큰 감동을 받았습니다.',
+        timestamp: '작성 예시 안내'
+      }
+    ];
+
+    // 상태 관리
+    let activeFilter = 'all';
+    const STORAGE_KEY = 'oralban_open_class_feedbacks_v2';
+
+    // 로컬 스토리지 데이터 로드
+    function loadComments() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          return JSON.parse(stored);
+        }
+      } catch (e) {
+        console.error("Storage load error", e);
+      }
+      return INITIAL_COMMENTS;
+    }
+
+    // 로컬 스토리지에 저장
+    function saveComments(data) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      } catch (e) {
+        console.error("Storage save error", e);
+      }
+    }
+
+    let comments = loadComments();
+
+    // 모둠 바로가기 카드 렌더링
+    function renderOverviewCards() {
+      const container = document.getElementById('groupOverviewCards');
+      container.innerHTML = Object.values(GROUPS).map(g => `
+        <div onclick="selectGroupForWrite('${g.id}')" class="group-card cursor-pointer bg-white rounded-2xl p-4 border border-gray-200/80 hover:border-emerald-400 hover:shadow-md transition-all duration-200 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
+                ${g.name}
+              </span>
+              <span class="text-base">${g.emoji}</span>
+            </div>
+            <h4 class="font-bold text-gray-900 group-hover:text-emerald-700 transition-colors text-sm sm:text-base">
+              ${g.topic}
+            </h4>
+            <p class="text-xs text-gray-500 mt-1 line-clamp-2">${g.desc}</p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-gray-100 flex items-center justify-between text-xs text-gray-400 group-hover:text-emerald-600 font-medium">
+            <span>소감 남기기</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 모둠 카드 클릭 시 작성 폼 선택 연동 및 스크롤
+    function selectGroupForWrite(groupId) {
+      const select = document.getElementById('groupSelect');
+      select.value = groupId;
+      
+      const form = document.getElementById('commentForm');
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      document.getElementById('messageInput').focus();
+
+      showAlert(`💡 '${GROUPS[groupId].name} (${GROUPS[groupId].topic})'이(가) 선택되었습니다. 격려의 말을 적어주세요!`, 'info');
+    }
+
+    // 알림 메시지 표시 (alert() 대체)
+    function showAlert(msg, type = 'success') {
+      const box = document.getElementById('alertBox');
+      box.className = 'rounded-xl p-3 text-xs sm:text-sm flex items-center gap-2 transition-all duration-200 ';
+      
+      if (type === 'success') {
+        box.className += 'bg-emerald-50 text-emerald-800 border border-emerald-200';
+        box.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600"></i> <span>${msg}</span>`;
+      } else if (type === 'info') {
+        box.className += 'bg-sky-50 text-sky-800 border border-sky-200';
+        box.innerHTML = `<i class="fa-solid fa-circle-info text-sky-600"></i> <span>${msg}</span>`;
+      } else {
+        box.className += 'bg-rose-50 text-rose-800 border border-rose-200';
+        box.innerHTML = `<i class="fa-solid fa-circle-exclamation text-rose-600"></i> <span>${msg}</span>`;
+      }
+      
+      box.classList.remove('hidden');
+      setTimeout(() => {
+        box.classList.add('hidden');
+      }, 4500);
+    }
+
+    // 필터 설정
+    function setFilter(filterId) {
+      activeFilter = filterId;
+      
+      // 버튼 활성화 클래스 토글
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        if (btn.dataset.id === filterId) {
+          btn.className = 'filter-btn active whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-emerald-600 text-white shadow-sm';
+        } else {
+          btn.className = 'filter-btn whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-white text-gray-600 border border-gray-200 hover:bg-gray-50';
+        }
+      });
+
+      renderComments();
+    }
+
+    // 칭찬 뱃지 '기타' 선택 시 직접 입력창 토글
+    function handleBadgeChange(value) {
+      const customContainer = document.getElementById('customBadgeContainer');
+      const customInput = document.getElementById('customBadgeInput');
+      if (value === 'custom') {
+        customContainer.classList.remove('hidden');
+        customInput.focus();
+      } else {
+        customContainer.classList.add('hidden');
+        customInput.value = '';
+      }
+    }
+
+    // 소감 등록 폼 제출 핸들러
+    function handleFormSubmit(e) {
+      e.preventDefault();
+
+      const groupVal = document.getElementById('groupSelect').value;
+      const badgeSelectVal = document.getElementById('badgeSelect').value;
+      let badgeVal = badgeSelectVal;
+
+      if (badgeSelectVal === 'custom') {
+        const customText = document.getElementById('customBadgeInput').value.trim();
+        badgeVal = customText ? (customText.startsWith('🏷️') ? customText : `🏷️ ${customText}`) : '🏷️ 특별한 칭찬';
+      }
+
+      const messageVal = document.getElementById('messageInput').value.trim();
+
+      if (!groupVal) {
+        showAlert('칭찬할 모둠을 선택해주세요.', 'error');
+        return;
+      }
+      if (!messageVal) {
+        showAlert('응원 소감을 입력해주세요.', 'error');
+        return;
+      }
+
+      // 현재 시각 포맷 (예: 10월 28일 14:25)
+      const now = new Date();
+      const timeStr = `${now.getMonth() + 1}월 ${now.getDate()}일 ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+
+      const newEntry = {
+        id: 'c_' + Date.now(),
+        groupId: groupVal,
+        author: '오알반의 따뜻한 응원자',
+        badge: badgeVal,
+        message: messageVal,
+        timestamp: timeStr
+      };
+
+      // 최신 글이 맨 위로
+      comments.unshift(newEntry);
+      saveComments(comments);
+
+      // 폼 리셋
+      document.getElementById('commentForm').reset();
+      document.getElementById('customBadgeContainer').classList.add('hidden');
+
+      // 소감 목록 갱신
+      renderComments();
+
+      showAlert('따뜻한 응원의 소감이 성공적으로 등록되었습니다! 감사합니다 🥰', 'success');
+
+      // 등록한 모둠 탭으로 자동 필터 변경
+      setFilter(groupVal);
+
+      // 소감 목록 위치로 부드럽게 스크롤
+      setTimeout(() => {
+        document.getElementById('commentsContainer').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 300);
+    }
+
+    // 소감 목록 렌더링
+    function renderComments() {
+      const container = document.getElementById('commentsContainer');
+      const countSpan = document.getElementById('totalCommentCount');
+      
+      countSpan.innerText = comments.length;
+
+      // 필터링 적용
+      const filtered = activeFilter === 'all' 
+        ? comments 
+        : comments.filter(item => item.groupId === activeFilter);
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="bg-white rounded-2xl p-10 text-center border border-dashed border-gray-300">
+            <div class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-500 mx-auto flex items-center justify-center text-xl mb-3">
+              <i class="fa-regular fa-comment-dots"></i>
+            </div>
+            <p class="text-sm font-semibold text-gray-700">등록된 소감이 없습니다.</p>
+            <p class="text-xs text-gray-400 mt-1">우리 멋진 학생들을 위해 첫 번째 응원의 글을 남겨주세요!</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(item => {
+        const groupInfo = GROUPS[item.groupId] || { name: '모둠', topic: '발표' };
+        const isEx = item.isExample;
+        
+        return `
+          <div class="bg-white rounded-2xl p-4 sm:p-5 border ${isEx ? 'border-dashed border-emerald-300 bg-emerald-50/20' : 'border-gray-100'} shadow-sm hover:shadow transition space-y-3 relative overflow-hidden">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <div class="flex items-center gap-2">
+                ${isEx ? `
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
+                    <i class="fa-regular fa-lightbulb text-amber-600"></i> 작성 예시
+                  </span>
+                ` : ''}
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-100 text-emerald-800">
+                  ${groupInfo.name} : ${groupInfo.topic}
+                </span>
+                <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">
+                  ${item.badge}
+                </span>
+              </div>
+              <span class="text-[11px] ${isEx ? 'text-amber-700 font-semibold' : 'text-gray-400 font-normal'}">
+                <i class="fa-regular fa-clock mr-0.5"></i> ${item.timestamp}
+              </span>
+            </div>
+
+            <p class="text-sm text-gray-800 leading-relaxed font-normal whitespace-pre-line pl-0.5">
+              ${escapeHtml(item.message)}
+            </p>
+
+            <div class="flex items-center justify-between pt-1 border-t border-gray-50 text-xs">
+              <div class="flex items-center gap-1.5 text-emerald-700 font-semibold">
+                <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px]">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <span>${item.author || '오알반을 응원하는 마음'}</span>
+              </div>
+              <button onclick="handleLike(this)" class="text-gray-400 hover:text-rose-500 transition-colors flex items-center gap-1 text-xs">
+                <i class="fa-regular fa-heart"></i>
+                <span class="like-count font-medium">공감해요</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // 소감 좋아요 인터랙션
+    function handleLike(btn) {
+      const heartIcon = btn.querySelector('i');
+      const text = btn.querySelector('.like-count');
+      
+      if (heartIcon.classList.contains('fa-regular')) {
+        heartIcon.classList.remove('fa-regular');
+        heartIcon.classList.add('fa-solid', 'text-rose-500');
+        text.innerText = '응원 완료 ❤️';
+        text.classList.add('text-rose-600', 'font-bold');
+      } else {
+        heartIcon.classList.remove('fa-solid', 'text-rose-500');
+        heartIcon.classList.add('fa-regular');
+        text.innerText = '응원해요';
+        text.classList.remove('text-rose-600', 'font-bold');
+      }
+    }
+
+    // XSS 방지용 이스케이프 함수
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    window.onload = function() {
+      renderOverviewCards();
+      setFilter('all');
+    };
+  </script>
+</body>
+</html>
